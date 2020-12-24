@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ha: MyString
+  service: MyString
+  service_type: MyString
+  m_20092010: 1.5
+  f_20092010: 1.5
+
+two:
+  ha: MyString
+  service: MyString
+  service_type: MyString
+  m_20092010: 1.5
+  f_20092010: 1.5
