@@ -50,3 +50,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'mongoid', '~> 7.0.5'
 gem 'devise'
+gem 'bootstrap'
+gem 'sync_catalogue_data', path: "/home/rails/work/shabi/sync_catalogue_data"
