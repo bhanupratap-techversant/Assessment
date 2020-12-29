@@ -9,6 +9,13 @@
   <br/>
 <% end %>
 
+<div class="row">
+  <div class="col-md-12">
+    <%= link_to "Download CSV", url_for(request.parameters.merge(format: :csv)), class: "btn btn-primary" %>
+  </div>
+</div>
+<br/>
+
 <table id="population_statistics_table" class="table table-striped table-bordered">
   <thead>
     <th><%= sortable(:dimension) %></th>
@@ -30,5 +37,13 @@
       </tr>
     <% end %>
   </tbody>
+  <tfooter>
+    <th>Grand Total</th>
+    <th><%= @population_statistics.sum(:ha1_interior) %></th>
+    <th><%= @population_statistics.sum(:ha2_fraser) %></th>
+    <th><%= @population_statistics.sum(:ha3_vancouver_caustal) %></th>
+    <th><%= @population_statistics.sum(:ha4_vancouver_island) %></th>
+    <th><%= @population_statistics.sum(:ha5_northern) %></th>
+  </tfooter>
 </table>
 <%= will_paginate @population_statistics, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>

@@ -4,6 +4,11 @@ class PopulationStatisticsController < ApplicationController
                               .filter_by(filterable_params)
                               .ordered(sortable_params)
                               .paginate(page: params[:page])
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @population_statistics.to_csv }
+    end
   end
 
   private
