@@ -8,7 +8,23 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
+          <%= link_to "Population Statistics", population_statistics_path, class: "nav-link" %>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to "Health Services", "#", class: "nav-link" %>
+        </li>
+      <% end %>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <% if user_signed_in? %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="userNavbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= current_user.email %>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="userNavbarDropdown">
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
         </li>
       <% end %>
     </ul>

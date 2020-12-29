@@ -1,0 +1,34 @@
+<%= form_for :filter, method: :get do |f| %>
+  <div class="row">
+    <div class="col-md-12">
+      <%= f.label :dimension, "Filter by Dimension" %>
+      <%= f.select :dimension, select_options_for_dimensions %>
+      <%= f.submit "Filter", class: "btn btn-primary" %>
+    </div>
+  </div>
+  <br/>
+<% end %>
+
+<table id="population_statistics_table" class="table table-striped table-bordered">
+  <thead>
+    <th>Dimension</th>
+    <th>HA 1 Interior</th>
+    <th>HA 2 Fraser</th>
+    <th>HA 3 Vancouver Caustal</th>
+    <th>HA 4 Vancouver Island</th>
+    <th>HA 5 Northern</th>
+  </thead>
+  <tbody>
+    <% @population_statistics.each do |population_statistic| %>
+      <tr>
+        <td><%= population_statistic.dimension %></td>
+        <td><%= population_statistic.ha1_interior %></td>
+        <td><%= population_statistic.ha2_fraser %></td>
+        <td><%= population_statistic.ha3_vancouver_caustal %></td>
+        <td><%= population_statistic.ha4_vancouver_island %></td>
+        <td><%= population_statistic.ha5_northern %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @population_statistics, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>

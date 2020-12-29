@@ -1,6 +1,5 @@
-class HomeController < ApplicationController
+class PopulationStatisticsController < ApplicationController
   def index
-    # TODO: Add filters
     @population_statistics = PopulationStatistic.all.paginate(page: params[:page])
   end
 end
