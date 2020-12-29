@@ -21,12 +21,5 @@
       <% end %>
     </tbody>
   </table>
+  <%= will_paginate @population_statistics, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
 </div>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('#population_statistics_table').DataTable({
-
-    });
-  });
-</script>

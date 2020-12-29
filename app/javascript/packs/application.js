@@ -7,7 +7,6 @@
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("channels")
-require('datatables.net-bs4')
 
 import $ from 'jquery';
 global.$ = jQuery;

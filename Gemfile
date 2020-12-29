@@ -50,5 +50,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'mongoid', '~> 7.0.5'
 gem 'devise'
-gem 'bootstrap'
+gem 'will_paginate-bootstrap4'
+gem 'will_paginate'
 gem 'sync_catalogue_data', git: "https://github.com/bhanupratap-techversant/sync_catalogue_data.git"
