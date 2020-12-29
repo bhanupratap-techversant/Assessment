@@ -1,5 +1,6 @@
-PATH
-  remote: /home/rails/work/shabi/sync_catalogue_data
+GIT
+  remote: https://github.com/bhanupratap-techversant/sync_catalogue_data.git
+  revision: f87a8da79d4ad98f1dde9bd3642b547778875838
   specs:
     sync_catalogue_data (0.1.0)
 
