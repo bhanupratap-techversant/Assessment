@@ -7,4 +7,7 @@ class PopulationStatistic
   field :ha3_vancouver_caustal, type: Float
   field :ha4_vancouver_island, type: Float
   field :ha5_northern, type: Float
+
+  scope :filter_by, -> (params) { where(params) if params.present? }
+  scope :ordered, -> (params) { order("#{params[:sort]} #{params[:direction]}") if params.present? && fields.keys.include?(params[:sort]) }
 end

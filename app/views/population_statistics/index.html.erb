@@ -11,12 +11,12 @@
 
 <table id="population_statistics_table" class="table table-striped table-bordered">
   <thead>
-    <th>Dimension</th>
-    <th>HA 1 Interior</th>
-    <th>HA 2 Fraser</th>
-    <th>HA 3 Vancouver Caustal</th>
-    <th>HA 4 Vancouver Island</th>
-    <th>HA 5 Northern</th>
+    <th><%= sortable(:dimension) %></th>
+    <th><%= sortable(:ha1_interior, "HA 1 Interior") %></th>
+    <th><%= sortable(:ha2_fraser, "HA 2 Fraser") %></th>
+    <th><%= sortable(:ha3_vancouver_caustal, "HA 3 Vancouver Caustal") %></th>
+    <th><%= sortable(:ha4_vancouver_island, "HA 4 Vancouver Island") %></th>
+    <th><%= sortable(:ha5_northern, "HA 5 Northern") %></th>
   </thead>
   <tbody>
     <% @population_statistics.each do |population_statistic| %>
