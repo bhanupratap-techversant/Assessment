@@ -1,0 +1,46 @@
+<%= form_for :filter, method: :get do |f| %>
+  <div class="row">
+    <div class="col-md-12">
+      <%= f.label :ha, "Filter by HA" %>
+      <%= f.select :ha, select_options_for_ha %>
+      <%= f.submit "Filter", class: "btn btn-primary" %>
+    </div>
+  </div>
+  <br/>
+<% end %>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= link_to "Download CSV", url_for(request.parameters.merge(format: :csv)), class: "btn btn-primary" %>
+  </div>
+</div>
+<br/>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <th><%= sortable(:ha, "HA") %></th>
+    <th><%= sortable(:service, "SERVICE") %></th>
+    <th><%= sortable(:service_type, "SERVICE TYPE") %></th>
+    <th><%= sortable(:m_20092010) %></th>
+    <th><%= sortable(:f_20092010) %></th>
+  </thead>
+  <tbody>
+    <% @health_services.each do |health_service| %>
+      <tr>
+        <td><%= health_service.ha %></td>
+        <td><%= health_service.service %></td>
+        <td><%= health_service.service_type %></td>
+        <td><%= health_service.m_20092010 %></td>
+        <td><%= health_service.f_20092010 %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  <tfooter>
+    <th>Grand Total</th>
+    <th></th>
+    <th></th>
+    <th><%= @health_services.sum(:m_20092010) %></th>
+    <th><%= @health_services.sum(:f_20092010) %></th>
+  </tfooter>
+</table>
+<%= will_paginate @health_services, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>

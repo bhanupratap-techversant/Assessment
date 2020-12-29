@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     end
   end
   resources :population_statistics, only: :index
+  resources :health_services, only: :index
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
